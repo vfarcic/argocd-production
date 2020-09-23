@@ -1,0 +1,33 @@
+version: "1.0"
+kind: pipeline
+metadata:
+  name: devops-catalog/argocd-production
+  description: Argo CD production environment app
+  project: devops-catalog
+spec:
+  triggers:
+  - type: git
+    provider: github
+    name: main
+    repo: vfarcic/argocd-production
+    events:
+    - push
+    branchRegex: /master/gi
+    modifiedFilesGlob: "argocd/**"
+    verified: true
+  contexts: []
+  steps:
+    main_clone:
+      title: Cloning main repository
+      type: git-clone
+      repo: '${{CF_REPO_OWNER}}/${{CF_REPO_NAME}}'
+      revision: '${{CF_REVISION}}'
+      git: github
+    apply_env:
+      title: Applying production environment
+      image: codefresh/kubectl
+      commands:
+      - kubectl config use-context my-cluster
+      - kubectl apply --filename argocd/apps.yaml
+  stages: []
+
