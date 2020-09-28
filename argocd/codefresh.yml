@@ -22,7 +22,7 @@ spec:
       type: git-clone
       repo: '${{CF_REPO_OWNER}}/${{CF_REPO_NAME}}'
       revision: '${{CF_REVISION}}'
-      git: my-github
+      git: devops-catalog
     apply_env:
       title: Applying production environment
       image: codefresh/kubectl
