@@ -9,7 +9,7 @@ spec:
   - type: git
     provider: github
     name: main
-    repo: vfarcic/argocd-production
+    repo: devopsparadox/argocd-production
     events:
     - push
     branchRegex: /master/gi
@@ -27,7 +27,7 @@ spec:
       title: Applying production environment
       image: codefresh/kubectl
       commands:
-      - kubectl config use-context devops-catalog
+      - kubectl config use-context docatalog
       - kubectl apply --filename argocd/apps.yaml
   stages: []
 
