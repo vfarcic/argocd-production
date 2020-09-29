@@ -9,7 +9,7 @@ spec:
   - type: git
     provider: github
     name: main
-    repo: devopsparadox/argocd-production
+    repo: vfarcic/argocd-production
     events:
     - push
     branchRegex: /master/gi
