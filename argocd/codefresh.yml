@@ -31,3 +31,4 @@ spec:
       - kubectl apply --filename argocd/apps.yaml
   stages: []
 
+
