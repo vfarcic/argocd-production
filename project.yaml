@@ -29,11 +29,11 @@ spec:
     kind: Deployment
   - group: 'apps'
     kind: StatefulSet
-  - group: 'extensions/v1beta1'
+  - group: '*'
     kind: Ingress
   - group: 'networking.k8s.io/v1'
     kind: Ingress
-  - group: 'v1'
+  - group: '*'
     kind: Service
   - group: 'argoproj.io'
     kind: Application
