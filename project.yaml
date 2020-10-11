@@ -35,3 +35,5 @@ spec:
     kind: Ingress
   - group: 'v1'
     kind: Service
+  - group: 'argoproj.io'
+    kind: Application
