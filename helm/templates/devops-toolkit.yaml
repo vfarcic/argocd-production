@@ -1,29 +1,28 @@
----
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  finalizers:
-  - resources-finalizer.argocd.argoproj.io
   name: devops-toolkit
   namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
 spec:
-  destination:
-    namespace: production
-    server: https://kubernetes.default.svc
   project: production
   source:
+    path: helm
+    repoURL: https://github.com/vfarcic/devops-toolkit.git
+    targetRevision: HEAD
     helm:
       values: |
         image:
-          repository: vfarcic/devops-toolkit
-          tag: ef19bd2
+          tag: latest
         ingress:
-          host: devops-toolkit.184.72.187.41.xip.io
+          host: devopstoolkitseries.com
       version: v3
-    path: helm
-    repoURL: https://github.com/devopsparadox/devops-toolkit.git
-    targetRevision: HEAD
+  destination:
+    namespace: production
+    server: https://kubernetes.default.svc
   syncPolicy:
     automated:
-      prune: true
       selfHeal: true
+      prune: true
+
