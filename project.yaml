@@ -25,13 +25,6 @@ spec:
   - group: ''
     kind: NetworkPolicy
   namespaceResourceWhitelist:
-  - group: 'apps'
-    kind: Deployment
-  - group: 'apps'
-    kind: StatefulSet
   - group: '*'
-    kind: Ingress
-  - group: '*'
-    kind: Service
-  - group: 'argoproj.io'
-    kind: Application
+    kind: '*'
+
