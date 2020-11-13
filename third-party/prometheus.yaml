@@ -12,7 +12,7 @@ spec:
     repoURL: https://github.com/prometheus-community/helm-charts
     targetRevision: HEAD
   destination:
-    namespace: production
+    namespace: monitoring
     server: https://kubernetes.default.svc
   syncPolicy:
     automated:
