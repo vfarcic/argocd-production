@@ -23,6 +23,8 @@ spec:
     kind: Namespace
   - group: 'rbac.authorization.k8s.io'
     kind: '*'
+  - group: 'apiextensions.k8s.io'
+    kind: 'CustomResourceDefinition'
   namespaceResourceBlacklist:
   - group: ''
     kind: ResourceQuota
