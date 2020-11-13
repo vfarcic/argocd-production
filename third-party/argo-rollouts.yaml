@@ -2,17 +2,17 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: argo-rollouts
-  namespace: argo-rollouts
+  namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
   project: production
   source:
-    path: manifests/install.yaml
-    repoURL: https://github.com/argoproj/argo-rollouts
+    path: charts/argo-rollouts
+    repoURL: https://github.com/argoproj/argo-helm
     targetRevision: HEAD
   destination:
-    namespace: production
+    namespace: argo-rollouts
     server: https://kubernetes.default.svc
   syncPolicy:
     automated:
