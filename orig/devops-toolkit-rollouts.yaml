@@ -1,0 +1,38 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: devops-toolkit
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: production
+  source:
+    path: helm
+    repoURL: https://github.com/vfarcic/devops-toolkit.git
+    targetRevision: HEAD
+    helm:
+      values: |
+        image:
+          tag: latest
+        ingress:
+          enabled: false
+          host: devopstoolkitseries.com
+        istio:
+          enabled: true
+        hpa: true
+        rollout:
+          enabled: true
+      version: v3
+  destination:
+    namespace: production
+    server: https://kubernetes.default.svc
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true
+  ignoreDifferences:
+  - group: networking.istio.io/v1alpha3
+    kind: VirtualService
+    jsonPointers:
+    - /spec/http/*/route/*/weight
