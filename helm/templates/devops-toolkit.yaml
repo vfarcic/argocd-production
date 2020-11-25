@@ -14,7 +14,7 @@ spec:
     helm:
       values: |
         image:
-          tag: latest
+          tag: 2.9.17
         ingress:
           host: devopstoolkitseries.com
       version: v3
