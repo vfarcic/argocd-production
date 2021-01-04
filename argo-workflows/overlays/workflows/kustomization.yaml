@@ -3,4 +3,4 @@ kind: Kustomization
 resources:
 - namespace.yaml
 - rbac.yaml
-namespace: jdoe
+namespace: workflows
