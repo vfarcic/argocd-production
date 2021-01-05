@@ -6,5 +6,7 @@ resources:
 - github.com/argoproj/argo/manifests/cluster-install/workflow-controller-rbac
 - github.com/argoproj/argo/manifests/cluster-install/argo-server-rbac
 - ingress.yaml
+patchesStrategicMerge:
+- config.yaml
 namespace: argo
 
