@@ -20,7 +20,7 @@ spec:
   - group: 'apiextensions.k8s.io'
     kind: 'CustomResourceDefinition'
   - group: 'argoproj.io'
-    kind: 'ClusterWorkflowTemplate'
+    kind: '*'
   namespaceResourceBlacklist:
   - group: ''
     kind: ResourceQuota

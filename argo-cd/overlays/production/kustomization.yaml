@@ -9,3 +9,5 @@ patches:
     version: v1
     kind: Ingress
     name: argocd-server
+patchesStrategicMerge:
+- server.yaml
