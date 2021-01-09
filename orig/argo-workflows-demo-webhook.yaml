@@ -3,7 +3,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: github-eventsource
+  name: argo-workflows-demo-eventsource
   annotations:
     kubernetes.io/ingress.class: "nginx"
     ingress.kubernetes.io/ssl-redirect: "false"
@@ -16,7 +16,7 @@ spec:
         pathType: Prefix
         backend:
           service:
-           name: github-eventsource-svc
+           name: argo-workflows-demo-eventsource-svc
            port:
              number: 12000
     host: acme.com
@@ -26,7 +26,7 @@ spec:
 apiVersion: argoproj.io/v1alpha1
 kind: EventSource
 metadata:
-  name: github
+  name: argo-workflows-demo
 spec:
   service:
     ports:
@@ -35,7 +35,7 @@ spec:
   github:
     example:
       owner: vfarcic
-      repository: argocd-production
+      repository: argo-workflows-demo
       webhook:
         endpoint: /push
         port: "12000"
