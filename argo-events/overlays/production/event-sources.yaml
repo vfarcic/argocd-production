@@ -16,7 +16,7 @@ spec:
         pathType: Prefix
         backend:
           service:
-           name: webhook-eventsource-svc # TODO: Change
+           name: github-eventsource-svc
            port:
              number: 12000
     host: acme.com
