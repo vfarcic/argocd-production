@@ -29,6 +29,13 @@ spec:
             spec:
               entrypoint: build
               serviceAccountName: workflow
+              volumes:
+              - name: regcred
+                secret:
+                  secretName: regcred
+                  items:
+                    - key: .dockerconfigjson
+                      path: config.json
               templates:
               - name: build
                 dag:

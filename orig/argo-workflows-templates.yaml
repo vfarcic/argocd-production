@@ -19,6 +19,6 @@ spec:
       - --context={{inputs.parameters.app_repo}}
       - --destination={{inputs.parameters.container_image}}:{{inputs.parameters.container_tag}}
       volumeMounts:
-        - name: kaniko-secret
+        - name: regcred
           mountPath: /kaniko/.docker/
 
