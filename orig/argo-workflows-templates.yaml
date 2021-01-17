@@ -21,4 +21,3 @@ spec:
       volumeMounts:
         - name: regcred
           mountPath: /kaniko/.docker/
-
