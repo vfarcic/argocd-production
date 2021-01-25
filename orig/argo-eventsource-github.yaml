@@ -11,7 +11,7 @@ spec:
       targetPort: 12000
   github:
     argo-workflows-demo:
-      owner: devopsparadox
+      owner: vfarcic
       repository: argo-workflows-demo
       webhook:
         endpoint: /argo-workflows-demo
