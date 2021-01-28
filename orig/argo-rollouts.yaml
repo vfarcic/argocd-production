@@ -10,7 +10,7 @@ spec:
   source:
     path: charts/argo-rollouts
     repoURL: https://github.com/argoproj/argo-helm
-    targetRevision: 6b6254ef77d44a3185bda56aa229c0b2a7d7c161
+    targetRevision: 8baf0d4465e8784fdd0c769d3db000e221e1aab9
   destination:
     namespace: argo-rollouts
     server: https://kubernetes.default.svc
