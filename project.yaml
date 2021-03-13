@@ -10,7 +10,7 @@ spec:
   sourceRepos:
   - '*'
   destinations:
-  - namespace: '*'
+  - namespace: 'production'
     server: https://kubernetes.default.svc
   clusterResourceWhitelist:
   - group: '*'
