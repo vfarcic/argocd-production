@@ -8,7 +8,7 @@ metadata:
 spec:
   project: production
   source:
-    repoURL: https://github.com/vfarcic/argocd-production.git
+    repoURL: https://github.com/rkraoyoko/argocd-production.git
     targetRevision: HEAD
     path: helm
   destination:
